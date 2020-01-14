@@ -1,9 +1,14 @@
 import { QrGenerator } from 'nativescript-qr-generator';
-console.log(new QrGenerator().message);
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "ns-app",
     templateUrl: "app.component.html"
 })
-export class AppComponent { }
+export class AppComponent {
+
+    ngOnInit() {
+        console.log(new QrGenerator().render('Hello World'));
+    }
+
+}
