@@ -2,6 +2,6 @@
     <Label text="Home"></Label>
 </ActionBar>
 
-<GridLayout>
-    <Image src="" (loaded)="onImageLoaded($event)"></Image>
+<GridLayout columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" >
+    <Image src="" rowSpan="2" width="300" height="300" margin="3" verticalAlignment="top" (loaded)="onImageLoaded($event)"></Image>
 </GridLayout>
