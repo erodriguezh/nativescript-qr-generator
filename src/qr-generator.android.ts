@@ -2,26 +2,31 @@ import { QROptions } from './qr-generator.common';
 import { Color } from 'tns-core-modules/color';
 
 export class QrGenerator {
-  render(value: string, options?: QROptions): UIImage {
+  private _width = 200;
+  private _height = 200;
+  private _color = '0xFF000000';
+  private _backgroundColor = '0xFFFFFFFF';
+
+  render(value: string, options?: QROptions): globalAndroid.graphics.Bitmap {
     if (typeof options === 'undefined') options = {};
 
-    const qr = new QRCodeGenerator({ string: value });
-
     if (options.size) {
-      qr.size = CGSizeMake(options.size.width, options.size.height);
+      this._width = options.size.width;
+      this._height = options.size.height;
     }
 
     if (options.color) {
-      const uiColor = new Color(options.color);
-      qr.color = CIColor.colorWithRedGreenBlue(uiColor.r, uiColor.g, uiColor.b);
+      this._color = options.color;
     }
 
     if (options.backgroundColor) {
-      const uiBackgroundColor = new Color(options.backgroundColor);
-      qr.backgroundColor = CIColor.colorWithRedGreenBlue(uiBackgroundColor.r, uiBackgroundColor.g, uiBackgroundColor.b);
+      this._backgroundColor = options.backgroundColor;
     }
 
-    return qr.getImage();
+    return new net.glxn.qrgen.android.QRCode(value)
+        .withSize(this._width, this._height)
+        .withColor(new Color(this._color).android, new Color(this._backgroundColor).android)
+        .bitmap();
 /* 
     Bitmap myBitmap = QRCode.from(this.qrCodeValue).withSize(this.size, this.size)
     .withColor(this.onColor, this.offColor).bitmap();
