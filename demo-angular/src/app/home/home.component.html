@@ -3,5 +3,5 @@
 </ActionBar>
 
 <GridLayout columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" >
-    <Image src="" rowSpan="2" width="300" height="300" margin="3" verticalAlignment="top" (loaded)="onImageLoaded($event)"></Image>
+    <Image [src]="imageSrc" rowSpan="2" width="300" height="300" verticalAlignment="top" (loaded)="onImageLoaded($event)"></Image>
 </GridLayout>

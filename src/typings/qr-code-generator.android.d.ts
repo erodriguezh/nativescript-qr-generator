@@ -1,4 +1,4 @@
-/// <reference path="android-declarations.d.ts"/>
+/// <reference path="../node_modules/tns-platform-declarations/android.d.ts" />
 
 declare module net {
 	export module glxn {

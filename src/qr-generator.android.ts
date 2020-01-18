@@ -1,3 +1,6 @@
+/// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
+/// <reference path="./typings/qr-code-generator.android.d.ts" />
+
 import { QROptions } from './qr-generator.common';
 import { Color } from 'tns-core-modules/color';
 
@@ -23,15 +26,9 @@ export class QrGenerator {
       this._backgroundColor = options.backgroundColor;
     }
 
-    return new net.glxn.qrgen.android.QRCode(value)
+    return net.glxn.qrgen.android.QRCode.from(value)
         .withSize(this._width, this._height)
         .withColor(new Color(this._color).android, new Color(this._backgroundColor).android)
         .bitmap();
-/* 
-    Bitmap myBitmap = QRCode.from(this.qrCodeValue).withSize(this.size, this.size)
-    .withColor(this.onColor, this.offColor).bitmap();
-
-    mImageView.setImageBitmap(myBitmap);
-     */
   }
 }
