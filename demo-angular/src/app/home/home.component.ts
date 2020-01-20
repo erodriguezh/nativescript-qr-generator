@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { QrGenerator } from 'nativescript-qr-generator';
 import { ImageSource } from "tns-core-modules/image-source";
+import { Image } from "tns-core-modules/ui/image";
 
 @Component({
     selector: "Home",
@@ -18,8 +19,21 @@ export class HomeComponent implements OnInit {
 
     }
 
-    onImageLoaded(args) {
-        const result = new QrGenerator().render('Hello World', { color: '#FF0000', backgroundColor: '#FFFF00', size: { width: 300, height: 300 } });
-        this.imageSrc = new ImageSource(result);
+    onImageLoadedBasic(args) {
+        const image = args.object as Image;
+        const result = new QrGenerator().render('Hello World');
+        image.imageSource = new ImageSource(result);
+    }
+
+    onImageLoadedColors(args) {
+        const image = args.object as Image;
+        const result = new QrGenerator().render('Hello World with colors', { color: '#4183d7', backgroundColor: '#67809f' });
+        image.imageSource = new ImageSource(result);
+    }
+
+    onImageLoadedColorsSize(args) {
+        const image = args.object as Image;
+        const result = new QrGenerator().render('Hello World with colors and custom size', { size: { width: 100, height: 100 }, color: '#fbd90e', backgroundColor: '#0d0c0c' });
+        image.imageSource = new ImageSource(result);
     }
 }

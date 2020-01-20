@@ -2,6 +2,21 @@
     <Label text="Home"></Label>
 </ActionBar>
 
-<GridLayout columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" >
-    <Image [src]="imageSrc" rowSpan="2" width="300" height="300" verticalAlignment="top" (loaded)="onImageLoaded($event)"></Image>
+<GridLayout rows="*">
+    <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+        <StackLayout orientation="horizontal">
+            <GridLayout rows="*" columns="*" class="genre-tiles g1">
+                <Image src="" row="0" col="0" (loaded)="onImageLoadedBasic($event)"></Image>
+                <Label row="0" col="0" text="ELECTRONIC" horizontalAlignment="center" verticalAlignment="center" class="mt fs14 ls"></Label>
+            </GridLayout>
+            <GridLayout rows="*" columns="*" class="genre-tiles">
+                <Image src="" row="0" col="0" (loaded)="onImageLoadedColors($event)"></Image>
+                <Label row="0" col="0" text="ROCK" horizontalAlignment="center" verticalAlignment="center" class="mt fs14 ls"></Label>
+            </GridLayout>
+            <GridLayout rows="*" columns="*" class="genre-tiles g3">
+                <Image src="" row="0" col="0" (loaded)="onImageLoadedColorsSize($event)"></Image>
+                <Label row="0" col="0" text="CLASSICAL" horizontalAlignment="center" verticalAlignment="center"  class="mt fs14 ls"></Label>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
 </GridLayout>

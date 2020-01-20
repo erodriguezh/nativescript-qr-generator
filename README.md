@@ -4,36 +4,45 @@ Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hy
 
 Then describe what's the purpose of your plugin. 
 
-In case you develop UI plugin, this is where you can add some screenshots.
-
-## (Optional) Prerequisites / Requirements
-
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
-
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
+Go to your app's root folder and execute:
 
 ```javascript
 tns plugin add nativescript-qr-generator
 ```
 
 ## Usage 
-
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
 	
-	```javascript
-    Usage code snippets here
+	```typescript
+    import { Component } from "@angular/core";
+    import { QrGenerator } from "nativescript-drop-down";
+
+    @Component({
+        selector: "ns-main",
+        template: "<Image [src]="imageSrc" (loaded)="onImageLoaded($event)"></Image>"
+    })
+    export class AppComponent {
+
+        public imageSrc: ImageSource;
+
+        constructor() {} 
+        
+        onImageLoaded(){
+            const result = new QrGenerator().render('Hello World');
+            this.imageSrc = new ImageSource(result);
+        }
+    }
     ```)
 
 ## API
-
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
     
 | Property | Default | Description |
 | --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
+| size.width | 200 | The image's width |
+| size.height | 200 | The image's height |
+| color | '#000000' | The Qr's color |
+| backgroundColor | '#FFFFFFF' | The background's color |
     
 ## License
 
