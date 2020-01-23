@@ -10,7 +10,7 @@ export class QrGenerator {
   private _color = '0xFF000000';
   private _backgroundColor = '0xFFFFFFFF';
 
-  render(value: string, options?: QROptions): globalAndroid.graphics.Bitmap {
+  generate(value: string, options?: QROptions): globalAndroid.graphics.Bitmap {
     if (typeof options === 'undefined') options = {};
 
     if (options.size) {

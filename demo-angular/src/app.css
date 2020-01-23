@@ -3,3 +3,15 @@
 
 /* Place any CSS rules you want to apply on both iOS and Android here.
 This is where the vast majority of your CSS code goes. */
+
+/* CONTAINER */
+.qr-example {
+  margin: 10 5;
+}
+.qr-example Label{
+  text-align: center;
+  font-size: 14;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+  margin: 15 0;
+}

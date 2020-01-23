@@ -6,7 +6,7 @@ import { Color } from 'tns-core-modules/color';
 
 export class QrGenerator {
 
-  render(value: string, options?: QROptions): UIImage {
+  generate(value: string, options?: QROptions): UIImage {
     if (typeof options === 'undefined') options = {};
 
     const qr = new QRCodeGenerator({ string: value });
