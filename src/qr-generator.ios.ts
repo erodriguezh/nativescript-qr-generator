@@ -17,12 +17,12 @@ export class QrGenerator {
 
     if (options.color) {
       const uiColor = new Color(options.color);
-      qr.color = CIColor.colorWithRedGreenBlue(uiColor.r, uiColor.g, uiColor.b);
+      qr.color = new CIColor({ CGColor: uiColor.ios.CGColor });
     }
 
     if (options.backgroundColor) {
       const uiBackgroundColor = new Color(options.backgroundColor);
-      qr.backgroundColor = CIColor.colorWithRedGreenBlue(uiBackgroundColor.r, uiBackgroundColor.g, uiBackgroundColor.b);
+      qr.backgroundColor = new CIColor({ CGColor: uiBackgroundColor.ios.CGColor });
     }
 
     return qr.getImage();
