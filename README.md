@@ -1,40 +1,52 @@
 # nativescript-qr-generator
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
-
-Then describe what's the purpose of your plugin. 
-
-In case you develop UI plugin, this is where you can add some screenshots.
-
-## (Optional) Prerequisites / Requirements
-
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+NativeScript-Qr-Generator is a plugin for NativeScript which generates Qr code images.
 
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
+Go to your app's root folder and execute:
 
 ```javascript
 tns plugin add nativescript-qr-generator
 ```
 
 ## Usage 
-
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
 	
-	```javascript
-    Usage code snippets here
+	```typescript
+    import { Component } from "@angular/core";
+    import { ImageSource } from "tns-core-modules/image-source";
+    import { Image } from "tns-core-modules/ui/image";
+    import { QrGenerator } from "nativescript-qr-generator";
+
+    @Component({
+        selector: "ns-main",
+        template: "<Image src="" (loaded)="onImageLoaded($event)"></Image>"
+    })
+    export class AppComponent {
+
+        constructor() {} 
+        
+        onImageLoaded(){
+            const image = args.object as Image;
+            const result = new QrGenerator().generate('Hello World');
+            image.imageSource = new ImageSource(result);
+        }
+    }
     ```)
 
 ## API
-
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
     
 | Property | Default | Description |
 | --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
-    
-## License
+| value | - | Value to generate Qr code |
+| size.width | 200 | The image's width |
+| size.height | 200 | The image's height |
+| color | '#000000' | The Qr's color |
+| backgroundColor | '#FFFFFFF' | The background's color |
 
-Apache License Version 2.0, January 2004
+## Acknowledgements
+
+This plugin wraps the following native Qr generators libraries:
+
+**Android:** [https://github.com/kenglxn/QRGen](https://github.com/kenglxn/QRGen)<br />
+**iOS:** [https://github.com/gscarrone/iOS-QR-Code-Generator](https://github.com/gscarrone/iOS-QR-Code-Generator)
