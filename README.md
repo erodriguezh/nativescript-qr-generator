@@ -2,11 +2,6 @@
 
 NativeScript-Qr-Generator is a plugin for NativeScript which generates Qr code images.
 
-It wraps the following native Qr generators libraries:
-
-**Android:** [https://github.com/kenglxn/QRGen](https://github.com/kenglxn/QRGen)<br />
-**iOS:** [https://github.com/gscarrone/iOS-QR-Code-Generator](https://github.com/gscarrone/iOS-QR-Code-Generator)
-
 ## Installation
 
 Go to your app's root folder and execute:
@@ -48,3 +43,10 @@ tns plugin add nativescript-qr-generator
 | size.height | 200 | The image's height |
 | color | '#000000' | The Qr's color |
 | backgroundColor | '#FFFFFFF' | The background's color |
+
+## Acknowledgements
+
+This plugin wraps the following native Qr generators libraries:
+
+**Android:** [https://github.com/kenglxn/QRGen](https://github.com/kenglxn/QRGen)<br />
+**iOS:** [https://github.com/gscarrone/iOS-QR-Code-Generator](https://github.com/gscarrone/iOS-QR-Code-Generator)
