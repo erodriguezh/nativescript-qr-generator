@@ -7,8 +7,8 @@ import { Color } from 'tns-core-modules/color';
 export class QrGenerator {
   private _width = 200;
   private _height = 200;
-  private _color = '0xFF000000';
-  private _backgroundColor = '0xFFFFFFFF';
+  private _color = '#000000';
+  private _backgroundColor = '#FFFFFF';
 
   generate(value: string, options?: QROptions): globalAndroid.graphics.Bitmap {
     if (typeof options === 'undefined') options = {};
