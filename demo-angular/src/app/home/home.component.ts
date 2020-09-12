@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { QrGenerator } from 'nativescript-qr-generator';
-import { ImageSource } from "tns-core-modules/image-source";
-import { Image } from "tns-core-modules/ui/image";
+import { ImageSource } from "@nativescript/core";
+import { Image } from "@nativescript/core";
 
 @Component({
     selector: "Home",
