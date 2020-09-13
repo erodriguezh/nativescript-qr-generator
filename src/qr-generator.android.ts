@@ -1,8 +1,5 @@
-/// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
-/// <reference path="./typings/qr-code-generator.android.d.ts" />
-
 import { QROptions } from './qr-generator.common';
-import { Color } from 'tns-core-modules/color';
+import { Color } from '@nativescript/core';
 
 export class QrGenerator {
   private _width = 200;
