@@ -37,6 +37,13 @@
 	"author": {
 		"name": "Eduardo Rodriguez"
 	},
+    "contributors": [
+        {
+            "name": "Kefah BADER ALDIN",
+            "email": "kefah.bader@gmail.com",
+            "url": "https://github.com/kefahB"
+        }
+    ],
 	"bugs": {
 		"url": "https://github.com/erodriguezh/nativescript-qr-generator/issues"
 	},
