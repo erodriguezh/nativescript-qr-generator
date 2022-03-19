@@ -29,7 +29,7 @@ export class QrGenerator {
             if(options?.logo?.path) {
                 logo = ImageSource.fromFileSync(options.logo.path).android;
             } else {
-                logo = ImageSource.fromResourceSync('logo.png').android;
+                logo = ImageSource.fromResourceSync('logo').android;
             }
 
             // Get your images from their files
