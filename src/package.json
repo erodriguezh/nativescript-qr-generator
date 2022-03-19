@@ -21,6 +21,8 @@
 		"ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**' --exclude '**/platforms/**'",
 		"demo-angular.ios": "npm i && cd ../demo-angular && tns run ios",
 		"demo-angular.android": "npm i && cd ../demo-angular && tns run android",
+		"demo.ios": "npm i && cd ../demo && tns run ios",
+		"demo.android": "npm i && cd ../demo && tns run android",
 		"demo-angular.reset": "cd ../demo-angular && npx rimraf -- hooks node_modules platforms package-lock.json",
 		"plugin.prepare": "npm run build undefined && cd ../demo-angular && tns plugin remove nativescript-qr-generator && tns plugin add ../src",
 		"clean": "npm run demo-angular.reset && npx rimraf -- node_modules package-lock.json && npm i"
