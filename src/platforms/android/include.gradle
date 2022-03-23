@@ -10,5 +10,5 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.kenglxn.QRGen:android:2.6.0'
+    implementation 'com.github.kenglxn.QRGen:android:2.6.0'
 }
